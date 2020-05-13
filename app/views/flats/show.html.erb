@@ -1,14 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://picsum.photos/1000/400);">
+  <div class="container">
+    <h1><%= @flat.name %></h1>
+    <p><%= @flat.address %></p>
+  </div>
+</div>
+
 <div class="container text-align-center">
 
-  <div class="card align-middle m-3 w-100" style="width: 18rem;">
+  <div class="card overlap align-middle m-3 w-100" style="width: 18rem;">
     <!-- Contains the info about restaurant -->
-    <img src="https://picsum.photos/500/200" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><%= @flat.name %></h5>
       <p class="card-text"><%= @flat.address %></p>
       <p class="card-text"><%= @flat.description %></p>
-      <p class="card-text"><%= @flat.price_per_night %>£</p>
-      <p class="card-text"><%= @flat.number_of_guests %> people.</p>
+      <p class="card-text"><i class="fas fa-euro-sign"></i><%= @flat.price_per_night %></p>
+      <p class="card-text"><i class="fas fa-user-friends"></i><%= @flat.number_of_guests %> people.</p>
       <%= link_to 'Back', flats_path, :class => "btn btn-primary" %> |
       <%= link_to 'Edit', edit_flat_path(@flat), :class => "btn btn-primary" %> |
       <%= link_to 'Delete', flat_path(@flat),
