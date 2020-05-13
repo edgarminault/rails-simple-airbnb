@@ -10,8 +10,15 @@
   <div class="card overlap align-middle m-3 w-100" style="width: 18rem;">
     <!-- Contains the info about restaurant -->
     <div class="card-body">
-      <h5 class="card-title"><%= @flat.name %></h5>
+      <h3 class="card-title"><%= @flat.name %></h5>
       <p class="card-text"><%= @flat.address %></p>
+    </div>
+  </div>
+
+  <div class="card align-middle m-3 w-100" style="width: 18rem;">
+    <!-- Contains the info about restaurant -->
+    <div class="card-body">
+      <h3 class="card-title">Info</h3>
       <p class="card-text"><%= @flat.description %></p>
       <p class="card-text"><i class="fas fa-euro-sign"></i><%= @flat.price_per_night %></p>
       <p class="card-text"><i class="fas fa-user-friends"></i><%= @flat.number_of_guests %> people.</p>
