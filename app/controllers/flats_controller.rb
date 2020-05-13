@@ -8,7 +8,7 @@ class FlatsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    @flat = Flat.find(params[:id])
   end
 
   def create
