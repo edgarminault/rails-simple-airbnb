@@ -5,9 +5,8 @@
         <div class="card align-middle m-3 ">
           <img src="https://picsum.photos/200" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title"><%= link_to flat.name, flats_path %></h5>
+            <h5 class="card-title"><%= link_to flat.name, flat_path(flat) %></h5>
             <h6 class="card-text"><%= flat.address %></h6>
-            <p class="card-text"><%= flat.description %></p>
             <p class="card-text"><%= flat.price_per_night %>£</p>
             <p class="card-text"><%= flat.number_of_guests %>people</p>
           </div>

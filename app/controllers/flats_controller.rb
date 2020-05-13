@@ -4,7 +4,7 @@ class FlatsController < ApplicationController
   end
 
   def new
-    @restaurant = Restaurant.new # needed to instantiate the form_for
+    @flat = Flat.new # needed to instantiate the form_for
   end
 
   def show
@@ -12,9 +12,9 @@ class FlatsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new(restaurant_params)
-    if @restaurant.save
-      redirect_to restaurant_path(@restaurant)
+    @flat = Flat.new(flat_params)
+    if @flat.save
+      redirect_to flat_path(@flat)
     else
       render :new
     end
@@ -22,9 +22,13 @@ class FlatsController < ApplicationController
     # no need for app/views/restaurants/create.html.erb
   end
 
+  def edit
+    @flat = Flat.find(params[:id])
+  end
+
   private
 
-  def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :phone_number, :category)
+  def flat_params
+    params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests)
   end
 end
