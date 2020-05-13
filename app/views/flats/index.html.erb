@@ -1,0 +1,13 @@
+<div class="cards text-align-center">
+  <% @flats.each do |flat| %>
+    <div class="card align-middle m-3 w-100" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to flat.name, flats_path %></h5>
+        <h6 class="card-text"><%= flat.address %></h6>
+        <p class="card-text"><%= flat.description %></p>
+        <p class="card-text"><%= flat.price_per_night %>£</p>
+        <p class="card-text"><%= flat.number_of_guests %>people</p>
+      </div>
+    </div>
+  <% end %>
+</div>
