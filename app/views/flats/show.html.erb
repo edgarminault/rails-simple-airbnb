@@ -11,7 +11,10 @@
       <p class="card-text"><%= @flat.number_of_guests %> people.</p>
       <%= link_to 'Back', flats_path, :class => "btn btn-primary" %> |
       <%= link_to 'Edit', edit_flat_path(@flat), :class => "btn btn-primary" %> |
-      <%= link_to 'Delete', flats_path, :class => "btn btn-primary" %>
+      <%= link_to 'Delete', flat_path(@flat),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            :class => "btn btn-danger" %>
     </div>
   </div>
 
