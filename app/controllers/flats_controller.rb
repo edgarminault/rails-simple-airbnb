@@ -1,6 +1,10 @@
 class FlatsController < ApplicationController
   def index
-    @flats = Flat.all
+    if params[:query].present?
+      @flats = Flat.where('name ILIKE ?', "%#{params[:query]}%")
+    else
+      @flats = Flat.all
+    end
   end
 
   def new
@@ -35,12 +39,12 @@ class FlatsController < ApplicationController
   end
 
   def destroy
-      @flat = Flat.find(params[:id])
-      @flat.destroy
+    @flat = Flat.find(params[:id])
+    @flat.destroy
 
-      # no need for app/views/restaurants/destroy.html.erb
-      redirect_to flats_path
-    end
+    # no need for app/views/restaurants/destroy.html.erb
+    redirect_to flats_path
+  end
 
   private
 
