@@ -26,6 +26,14 @@ class FlatsController < ApplicationController
     @flat = Flat.find(params[:id])
   end
 
+  def update
+    @flat = Flat.find(params[:id])
+    @flat.update(flat_params)
+
+    # no need for app/views/restaurants/update.html.erb
+    redirect_to flat_path(@flat)
+  end
+
   private
 
   def flat_params
